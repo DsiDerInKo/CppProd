@@ -15,7 +15,7 @@ public:
 
 	int getNumberOfRoots();
 
-	std::optional<std::array<double, 2>> getRoots();
+	std::array<double, 2> getRoots();
 
 	double getMin();
 
@@ -30,4 +30,10 @@ public:
 	double getBCof();
 
 	double getCCof();
+
+	void setACof(double x);
+
+	void setBCof(double x);
+
+	void setCCof(double x);
 };

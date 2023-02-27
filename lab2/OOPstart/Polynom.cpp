@@ -28,11 +28,11 @@ int Polynom::getNumberOfRoots() {
 	else return 2;
 }
 
-std::optional<std::array<double, 2>> Polynom::getRoots() {
-	if (getNumberOfRoots() == 0) return {};
+std::array<double, 2> Polynom::getRoots() {
+	if (getNumberOfRoots() == 0) return {NULL,NULL};
 
 	std::array<double, 2> ans;
-
+	
 	ans[0] = (-b + sqrt(b * b - 4 * a * c)) / (2 * a);
 	ans[1] = (-b - sqrt(b * b - 4 * a * c)) / (2 * a);
 	return ans;
@@ -53,7 +53,7 @@ double Polynom::getValue(double x) {
 }
 
 void Polynom::printPolynomView() {
-	std::cout << a << "x^2 +" << b << "x +" << c;
+	std::cout << a << "x^2 + " << b << "x + " << c<<'\n';
 }
 
 double Polynom::getACof() {
@@ -66,4 +66,16 @@ double Polynom::getBCof() {
 
 double Polynom::getCCof() {
 	return c;
+}
+
+void Polynom::setACof(double x) {
+	this->a = x;
+}
+
+void Polynom::setBCof(double x) {
+	this->b=x;
+}
+
+void Polynom::setCCof(double x) {
+	this->c=x;
 }
