@@ -44,15 +44,15 @@ bool Parallelogram::operator==(const IPhysObject& obj) const{
 }
 
 bool Parallelogram::operator<(const IPhysObject& obj) const{
-    return mass() == obj.mass();
+    return mass() < obj.mass();
 }
 
 void Parallelogram::draw(){
     
-    std::cout << "Name: " << name<< '\n'; 
-    std::cout << "Size: " << size()<< '\n';
-    std::cout << "Weight: " << weight<< '\n';
-    std::cout << "Position: " << position().x << " " << position().y<< '\n';
+    std::cout << "Name: " << name << '\n'; 
+    std::cout << "Size: " << size() << '\n';
+    std::cout << "Weight: " << weight << '\n';
+    std::cout << "Position: " << position().x << " " << position().y << '\n';
     
 }
 
