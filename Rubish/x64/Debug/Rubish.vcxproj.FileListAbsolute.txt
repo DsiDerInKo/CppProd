@@ -1,0 +1,2 @@
+C:\prog\c++ prod\Rubish\x64\Debug\Rubish.exe
+C:\prog\c++ prod\CppProd\Rubish\x64\Debug\Rubish.exe
