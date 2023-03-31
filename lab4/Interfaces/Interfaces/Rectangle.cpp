@@ -32,11 +32,11 @@ CVector2D Rectangle::position() const{
 }
 
 double Rectangle::square(){
-    return (rightBot.x - leftBot.x)*(leftTop.y-leftBot.y);
+    return abs((rightBot.x - leftBot.x))*abs((leftTop.y-leftBot.y));
 }
 
 double Rectangle::perimeter(){
-    return (rightBot.x - leftBot.x)*2 + (leftTop.y-leftBot.y)*2;
+    return abs((rightBot.x - leftBot.x))*2 + abs((leftTop.y-leftBot.y))*2;
 }
 
 bool Rectangle::operator==(const IPhysObject& obj) const{
@@ -66,7 +66,7 @@ unsigned Rectangle::size(){
 
 void Rectangle::initFromDialogue(){
 
-    std::cout << "Enter 3 CVector2D (3 dots) and weight by lines";
+    std::cout << "Enter 3 CVector2D (3 dots) and weight by lines" << '\n';
     std::cin >> leftBot.x >> leftBot.y;
     std::cin >> leftBot.x >> leftBot.y;
     std::cin >> leftBot.x >> leftBot.y;

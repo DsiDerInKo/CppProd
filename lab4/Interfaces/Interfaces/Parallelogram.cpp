@@ -32,11 +32,11 @@ CVector2D Parallelogram::position() const{
 }
 
 double Parallelogram::square(){
-    return (rightBot.x - leftBot.x)*(leftTop.y-leftBot.y);
+    return abs((rightBot.x - leftBot.x))*abs((leftTop.y-leftBot.y));
 }
 
 double Parallelogram::perimeter(){
-    return (rightBot.x - leftBot.x)*2 + (leftTop.y-leftBot.y)*2;
+    return abs((rightBot.x - leftBot.x))*2 + abs((leftTop.y-leftBot.y))*2;
 }
 
 bool Parallelogram::operator==(const IPhysObject& obj) const{
@@ -66,7 +66,7 @@ unsigned Parallelogram::size(){
 
 void Parallelogram::initFromDialogue(){
     
-    std::cout << "Enter 3 CVector2D (3 dots) and weight by lines";
+    std::cout << "Enter 3 CVector2D (3 dots) and weight by lines" << '\n';
     std::cin >> leftBot.x >> leftBot.y;
     std::cin >> leftBot.x >> leftBot.y;
     std::cin >> leftBot.x >> leftBot.y;

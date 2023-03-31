@@ -59,6 +59,7 @@ int main(int argc, char* argv[]){
     int action;
     double x, y, perSum, sqSum, massAll;
     CVector2D centerMass;
+    double amount=0;
 
     while(true) {
         getMenu();
@@ -92,10 +93,11 @@ int main(int argc, char* argv[]){
         case showAllFigures:
             for(IFigure*& figure : list){
                 figure->draw();
+                cout << '\n';
             }
             break;
         case memoryUsed:
-            double amount=0;
+            amount=0;
 
             for(IFigure*& figure : list){
                 amount+=figure->size();
