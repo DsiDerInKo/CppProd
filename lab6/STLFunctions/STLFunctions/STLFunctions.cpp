@@ -34,21 +34,33 @@ bool oneOf(InputIt first, InputIt last, UnaryPredicate predicate) {
 
 template<class InputIt, class T>
 InputIt findBackward(InputIt first, InputIt last, const T& value) {
+    auto tmp = last;
     while(last!=first) {
-        if(*last == value) {
-            return last;
+        if(*first == value) {
+            tmp = first;
         }
-        last--;
+        first++;
     }
+    return tmp;
 }
 
 int main(int argc, char* argv[]) {
 
-    std::vector<int> v {2, 2, 3, 4};
+    std::vector<int> v1 {2, 2, 2, 4};
+    std::vector<int> v2 {1, 2, 3, 4};
+    std::vector<int> v3 {3, 3, 3, 4};
     int n1 = 3;
     int n2 = 5;
 
-    std::cout <<  allOf(v.cbegin(),v.cend(),[](int i) { return i % 2 == 0; });
+    std::cout <<  allOf(v1.cbegin(),v1.cend(),[](int i) { return i % 2 == 0; }) << '\n';
+    std::cout <<  allOf(v2.cbegin(),v2.cend(),[](int i) { return i % 2 == 0; }) << '\n';
+
+    std::cout <<  oneOf(v1.cbegin(),v1.cend(),[](int i) { return i % 2 == 0; }) << '\n';
+    std::cout <<  oneOf(v3.cbegin(),v3.cend(),[](int i) { return i % 2 == 0; }) << '\n';
+
+    int val = 3;
+    auto elem = findBackward(v3.cbegin(),v3.cend(),val);
+    std::cout << (*elem);
     
     return 0;
 }
